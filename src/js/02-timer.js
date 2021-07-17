@@ -28,8 +28,8 @@ class Timer {
       setInterval(() => {
       currentDate = Date.now();
       let timeCountdown = this.targetDate - currentDate;
-        this.timerUpdate(convertMs(timeCountdown));
-        console.log(convertMs(timeCountdown))
+      this.timerUpdate(convertMs(timeCountdown - (180 * 60 * 1000)));
+      console.log(convertMs(timeCountdown - (180 * 60 * 1000)))
     }, 1000);}  
     }
   
@@ -52,7 +52,6 @@ function onStartButtonClick() {
   const newTimer = new Timer(inputDate);
   refs.startBtn.setAttribute('disabled', true);
   refs.input.value = '';
-
 }
   
 refs.input.addEventListener('change', oninputChange);
